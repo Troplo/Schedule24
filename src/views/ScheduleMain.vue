@@ -65,7 +65,7 @@
                 Definition.BLUE,
                 Definition.RED,
                 Definition.GREEN
-              ].includes(period[1])
+              ].includes(period[1] as number)
                 ? getPeriodMetadata(period[1]).color
                 : 'white'
             }"
