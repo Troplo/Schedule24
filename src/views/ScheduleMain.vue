@@ -138,7 +138,10 @@ const inited = ref(false);
 
 function save() {
   localStorage.setItem("periods", JSON.stringify(periods.value));
-  editing.value = false;
+
+  if (Object.values(periods.value).every((period) => period)) {
+    editing.value = false;
+  }
 }
 
 const periods = ref({
