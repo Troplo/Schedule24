@@ -59,10 +59,14 @@
           <div
             :style="{
               backgroundColor: getPeriodMetadata(period[1]).color + '20',
-              color: [Definition.WHITE, Definition.YELLOW].includes(
-                period[1] as number
-              )
-                ? 'black'
+              color: [
+                Definition.WHITE,
+                Definition.YELLOW,
+                Definition.BLUE,
+                Definition.RED,
+                Definition.GREEN
+              ].includes(period[1])
+                ? getPeriodMetadata(period[1]).color
                 : 'white'
             }"
             class="flex justify-between items-center"
@@ -127,7 +131,7 @@ import { computed, onMounted, provide, ref, Transition, watch } from "vue";
 import TextField from "@/components/Framework/Input/TextField.vue";
 import TpuButton from "@/components/Framework/Button/TpuButton.vue";
 import ScheduleComponent from "@/components/ScheduleComponent.vue";
-import { Definition, Mode } from "@/data";
+import { currentPeriods, Definition, Mode } from "@/data";
 
 const mode = ref<Mode>(Mode.UNIFIED);
 const inited = ref(false);
