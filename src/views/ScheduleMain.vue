@@ -43,7 +43,17 @@
         />
         <div :key="'ALL'" v-else>
           <template v-for="mode in 3">
-            <p class="text-xl mt-4 mb-2">{{ Mode[mode - 1] }}</p>
+            <p class="text-xl mt-4 mb-2">
+              {{
+                mode - 1 === 0
+                  ? "Week A"
+                  : mode - 1 === 1
+                    ? "Week B"
+                    : mode - 1 === 2
+                      ? "Unified Week"
+                      : "All"
+              }}
+            </p>
 
             <schedule-component :periods="periods" :mode="mode - 1" />
           </template>
