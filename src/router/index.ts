@@ -7,6 +7,11 @@ const router = createRouter({
       path: "/",
       name: "SchedMain",
       component: () => import("../views/ScheduleMain.vue")
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: () => import("../views/LoginTpu.vue")
     }
   ]
 });
