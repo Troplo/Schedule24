@@ -45,8 +45,8 @@ export const currentPeriods = {
     thursday: [
       Definition.WHITE,
       Definition.WHITE,
-      Definition.YELLOW,
-      Definition.YELLOW,
+      Definition.RED,
+      Definition.RED,
       Definition.BLACK,
       Definition.BLUE
     ],
